@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/style2.css">
     <!-- /build -->
-  </head> 
+  </head>
 
   <body>
     <div class="container">
@@ -75,6 +75,17 @@
     <!-- build:js js/main.min.js -->
       <script src="js/main.js"></script>
     <!-- /build -->
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      This is my Template
+      <div class="entry">
+        <h1>{{title}}</h1>
+        <div class="body">
+          {{body}}
+        </div>
+      </div>
+    </script>
+
 
   </body>
 </html>
