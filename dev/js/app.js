@@ -1,19 +1,12 @@
 // jscs:disable
 require([
-        "models/UserModel",
-        "views/UserView"
+        "models/StudentModel",
+        "views/StudentView"
     ],
-    function(UserModel, UserView) {
+    function(StudentModel, StudentView) {
 
-        var user, track = new UserModel({username: " Vira"});
+        var studentModel = new StudentModel({collage: "SJSU"}), studentView = new StudentView({model:studentModel});
 
-        console.log("Let`s change name to hello");
-        track.set({username: "hello"}, {validate: true});
-
-        console.log("Does name change? - " + JSON.stringify(track));
-        track.save();
-
-        user = new UserView();
-        user.render();
+        studentView.render();
 
     });
