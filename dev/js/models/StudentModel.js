@@ -1,6 +1,6 @@
 define(["models/StudentModel"], function() {
 
-    return Backbone.Model.extend({
+    var StudentModel = Backbone.Model.extend({
         defaults: {
             collage: "CU Denver",
             state: "Colorado"
@@ -15,5 +15,6 @@ define(["models/StudentModel"], function() {
         }
     });
 
+    return StudentModel;
 });
 

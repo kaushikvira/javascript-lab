@@ -5,8 +5,7 @@ require([
     ],
     function(StudentModel, StudentView) {
 
-        var studentModel = new StudentModel({collage: "SJSU"}), studentView = new StudentView({model:studentModel});
-
+        var studentModel = new StudentModel({collage: "SJSU"}), studentView = new StudentView({model: studentModel});
         studentView.render();
 
     });
