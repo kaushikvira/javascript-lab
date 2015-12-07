@@ -1,10 +1,14 @@
 // jscs:disable
-require([], function(jump) {
+require([], function() {
 
     var track_1, UserModel = Backbone.Model.extend({
         defaults: {
             username: "Kaushik Vira"
         },
+        initialize: function() {
+            console.log("in init get call after setting default" + this.get("username") + this.defaults.username);
+        }
+
     });
 
     track_1 = new UserModel();
