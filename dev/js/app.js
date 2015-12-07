@@ -1,16 +1,30 @@
 // jscs:disable
 require([], function(jump) {
 
-    var UserModel = Backbone.Model.extend({
+    var track_1, UserModel = Backbone.Model.extend({
         defaults: {
-            license: "Helllo me"
+            username: "Kaushik Vira"
         },
     });
 
-    var track_1 = new UserModel({license: "my Lic"});
+    track_1 = new UserModel();
 
-    track_1.set({license: "hello"});
+    console.log(JSON.stringify(track_1));
 
-    console.log("hello" + JSON.stringify(track_1));
+    track_1 = new UserModel({username: "my Lic"});
+
+    console.log(JSON.stringify(track_1));
+
+    track_1.set({username: "hello"});
+
+    console.log(JSON.stringify(track_1));
+
+    console.log(track_1.toJSON());
+
+    track_1.unset("username");
+
+    console.log(track_1.toJSON());
+
+    track_1.set({username: "hello"}, {silent: true});
 
 });
