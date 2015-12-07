@@ -1,41 +1,14 @@
 // jscs:disable
-require([], function() {
+require(["models/UserModel"], function(UserModel) {
 
-    var track_1, UserModel = Backbone.Model.extend({
-        defaults: {
-            username: "Kaushik Vira"
-        },
-        initialize: function() {
-            console.log("1.  in init get call after setting default" + this.get("username") + this.defaults.username);
-        },
-        userName: function() {
-            return this.get("username");
-        }
+    var track_1 = new UserModel({username: " Vira"});
 
-    });
+    console.log("Let`s change name to hello");
 
-    track_1 = new UserModel();
+    track_1.set({username: "hello"}, {validate: true});
 
-    console.log(JSON.stringify(track_1));
+    console.log("Does name change? - " + JSON.stringify(track_1));
 
-    track_1 = new UserModel({username: "my Lic"});
-    track_1.on("change:username", function(user) {
-        console.log("Changed username " + user.previous("username") + " to " + user.userName());
-    });
-
-    console.log("2." + JSON.stringify(track_1));
-
-    track_1.set({username: "hello"});
-    console.log("3." + JSON.stringify(track_1));
-
-    console.log("4." + JSON.stringify(track_1));
-
-    track_1.unset("username");
-
-    console.log("5." + JSON.stringify(track_1));
-
-    track_1.set({username: "hello"}, {silent: true});
-
-    console.log("6." + JSON.stringify(track_1));
+    track_1.save();
 
 });
