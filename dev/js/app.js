@@ -28,13 +28,14 @@ require([], function() {
     track_1.set({username: "hello"});
     console.log("3." + JSON.stringify(track_1));
 
-    console.log("4." + track_1.toJSON());
+    console.log("4." + JSON.stringify(track_1));
 
     track_1.unset("username");
 
-    console.log("5." + track_1.toJSON());
+    console.log("5." + JSON.stringify(track_1));
 
     track_1.set({username: "hello"}, {silent: true});
-    console.log("6." + track_1.toJSON());
+
+    console.log("6." + JSON.stringify(track_1));
 
 });
