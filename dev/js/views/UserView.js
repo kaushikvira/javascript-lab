@@ -1,13 +1,20 @@
 define(["views/UserView"], function() {
 
-    return Backbone.View.extend({
+    var UserView = Backbone.View.extend({
         el: ".target",
-
+        template: Handlebars.compile("Hello this is handlebar template"),
+        events: {
+            "click ": "select",
+        },
         render: function() {
             console.log("render got called");
-            this.$el.html("helllo I replaced it");
+            this.$el.html(this.template());
+        },
+        select: function() {
+            console.log("got it here.");
         }
     });
 
+    return UserView;
 });
 

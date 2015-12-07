@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.5",
     "backbone": "~1.2.3",
     "almond": "~0.3.1",
-    "backbone.marionette": "marionette#~2.4.4"
+    "backbone.marionette": "marionette#~2.4.4",
+    "handlebars": "~4.0.5"
   }
 }

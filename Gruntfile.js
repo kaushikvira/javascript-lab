@@ -45,6 +45,8 @@ module.exports = function(grunt) {
           {expand: true, flatten: true, src: ['bower_components/bootstrap/dist/css/bootstrap.min.css'], dest: 'dist/css', filter: 'isFile'} ,
           // Bootstrap Fonts
           {expand: true, flatten: true, src: ['bower_components/bootstrap/dist/fonts/*'], dest: 'dist/fonts', filter: 'isFile'},
+          // Handlebar Fonts
+          {expand: true, flatten: true, src: ['bower_components/handlebars/handlebars.min.js'], dest: 'dist/js', filter: 'isFile'},
           // HTML files with URL's swapped
           {expand: true, flatten: true, src: ['tmp/*'], dest: 'dist/', filter: 'isFile'},
           // Images
