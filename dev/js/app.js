@@ -1,14 +1,19 @@
 // jscs:disable
-require(["models/UserModel"], function(UserModel) {
+require([
+        "models/UserModel",
+        "views/UserView"
+    ],
+    function(UserModel, UserView) {
 
-    var track_1 = new UserModel({username: " Vira"});
+        var user, track = new UserModel({username: " Vira"});
 
-    console.log("Let`s change name to hello");
+        console.log("Let`s change name to hello");
+        track.set({username: "hello"}, {validate: true});
 
-    track_1.set({username: "hello"}, {validate: true});
+        console.log("Does name change? - " + JSON.stringify(track));
+        track.save();
 
-    console.log("Does name change? - " + JSON.stringify(track_1));
+        user = new UserView();
+        user.render();
 
-    track_1.save();
-
-});
+    });
