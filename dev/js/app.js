@@ -9,11 +9,12 @@ require(["views/ItemView", "models/ItemModel", "models/ItemCollection", "views/I
         var threModel = new ItemModel({title: "Thr Title", message: "My Thr Message"});
 
         itemCollection.add(firstModel);
+        itemCollection.add(secModel);
+        itemCollection.add(threModel);
 
         var itemCollectionView = new ItemCollectionView({collection: itemCollection});
         itemCollectionView.render();
 
-        itemCollection.add(secModel);
-        itemCollection.add(threModel);
+
 
     });
